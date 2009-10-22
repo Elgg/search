@@ -2,31 +2,15 @@
 /**
  * Elgg search listing: gallery view
  *
+ * DEPRECATED VIEW: use entities/gallery_listing instead
+ *
  * @package Elgg
  * @subpackage Core
  * @author Curverider Ltd
  * @link http://elgg.org/
  */
 
+
+    echo elgg_view('entities/gallery_listing', $vars);
+
 ?>
-
-<div class="search_listing">
-
-	<div class="search_listing_header">
-
-			<?php
-
-				echo $vars['icon'];
-
-			?>
-
-	</div>
-	<div class="search_listing_info">
-		<?php
-
-			echo $vars['info'];
-
-		?>
-	</div>
-
-</div>

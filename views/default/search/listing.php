@@ -1,38 +1,35 @@
 <?php
-/**
- * Elgg search listing
- *
- * @package Elgg
- * @subpackage Core
- * @author Curverider Ltd
- * @link http://elgg.org/
- */
 
-if (isset($vars['search_viewtype']) && $vars['search_viewtype'] == "gallery") {
-	echo elgg_view("search/gallery_listing",$vars);
-} else {
+	/**
+	 * Elgg search listing
+	 * 
+	 * @package Elgg
+	 * @subpackage Core
+
+	 * @author Curverider Ltd
+
+	 * @link http://elgg.org/
+	 */
 
 ?>
 
-<div class="search_listing">
+	<div class="search_listing">
+	
+<?php 
+		
+echo $vars['entity_view'];
 
-	<div class="search_listing_icon">
-		<?php
-
-			echo $vars['icon'];
-
-		?>
-	</div>
-	<div class="search_listing_info">
-		<?php
-
-			echo $vars['info'];
-
-		?>
-	</div>
-
-</div>
-
-<?php
-
+if ($vars['search_types'] && is_array($vars['search_types'])) {
+	echo '<div class="searchtypes">' . elgg_echo('search:matched');
+	foreach ($vars['search_types'] as $st) {
+		echo '<span class="searchtype">' . elgg_echo($st) . '</span> ';
+	}
+	echo '</div>';
+		
 }
+	    
+	    
+	    
+
+?>
+	</div>
